@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .font-mono-tabular {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes gentle-sway {
+  0%, 100% {
+    transform: rotate(-1.2deg);
+  }
+  50% {
+    transform: rotate(1.2deg);
+  }
+}
+
+@keyframes leaf-breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes float-steam {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.95);
+  }
+  50% {
+    opacity: 0.55;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+.animate-sway {
+  transform-origin: 50% 85%;
+  animation: gentle-sway 5.5s ease-in-out infinite;
+}
+
+.animate-sway-paused {
+  transform-origin: 50% 85%;
+  animation: gentle-sway 5.5s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.animate-leaf-breathe {
+  transform-origin: center;
+  animation: leaf-breathe 4s ease-in-out infinite;
+}
+
+.animate-steam-1 {
+  animation: float-steam 3.2s ease-in-out infinite;
+}
+
+.animate-steam-2 {
+  animation: float-steam 3.2s ease-in-out 1.4s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sway,
+  .animate-sway-paused,
+  .animate-leaf-breathe,
+  .animate-steam-1,
+  .animate-steam-2 {
+    animation: none !important;
+  }
+}
+

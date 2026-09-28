@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "FocusTab — Botanical Focus Timer",
+  "short_name": "FocusTab",
+  "version": "1.0.0",
+  "description": "A calm, minimal productivity timer for students. Grow a botanical tree while staying focused and cultivate your daily focus garden.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "FocusTab — Open Focus Timer",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ]
+}

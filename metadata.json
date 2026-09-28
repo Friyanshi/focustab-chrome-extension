@@ -1,0 +1,6 @@
+{
+  "name": "FocusTab — Botanical Focus Timer & Chrome Extension",
+  "description": "A calm, handcrafted Manifest V3 Chrome Extension and focus timer for students. Grow a living botanical tree while you study, with customizable focus and break sessions, timestamp-accurate alarms, and a persistent focus garden.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
