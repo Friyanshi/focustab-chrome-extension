@@ -165,8 +165,46 @@ export const ExtensionGuideView: React.FC<ExtensionGuideViewProps> = ({ store })
             <div className="font-mono-tabular text-xs opacity-60 mb-1">STEP 4</div>
             <h3 className="font-semibold text-sm mb-1.5">Click &ldquo;Load unpacked&rdquo;</h3>
             <p className="text-xs opacity-75 leading-relaxed">
-              Click <strong>Load unpacked</strong> (top-left) and select your unzipped folder. Click the puzzle piece icon in Chrome&apos;s toolbar and pin <strong>FocusTab</strong>!
+              Click <strong>Load unpacked</strong> (top-left) and select the folder that directly contains <code className="font-mono-tabular">manifest.json</code>. Pin <strong>FocusTab</strong> in Chrome!
             </p>
+          </div>
+        </div>
+
+        {/* Fixing "Manifest file is missing or unreadable" */}
+        <div
+          className={`mt-6 rounded-2xl p-4.5 border ${
+            isDark
+              ? 'bg-[#241E18] border-[#473626] text-[#F3E3D3]'
+              : 'bg-[#FEF8F0] border-[#EBD6BE] text-[#4A321E]'
+          }`}
+        >
+          <div className="flex items-start gap-3">
+            <div className="p-2 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5">
+              <FolderOpen className="w-5 h-5" />
+            </div>
+            <div className="space-y-1.5 text-xs">
+              <h4 className="font-semibold text-sm">
+                Seeing &ldquo;Manifest file is missing or unreadable&rdquo;? Here is the quick fix:
+              </h4>
+              <p className="opacity-85 leading-relaxed">
+                When you unzip the downloaded file, Windows/macOS often creates a parent folder with an inner subfolder. When clicking <strong>&ldquo;Load unpacked&rdquo;</strong>, you must select the folder that has <code className="font-mono-tabular font-bold">manifest.json</code> directly inside it:
+              </p>
+              <div
+                className={`p-3 rounded-xl font-mono-tabular text-[11px] leading-relaxed ${
+                  isDark ? 'bg-[#15120E] text-[#D8C7B5]' : 'bg-[#F5ECE0] text-[#3D2918]'
+                }`}
+              >
+                <div>❌ <strong>Wrong:</strong> Selecting Desktop/Focus Tab (if it contains another nested folder)</div>
+                <div className="mt-1">✅ <strong>Correct:</strong> Double-click into the folder until you see:</div>
+                <div className="pl-4 opacity-90">
+                  ├── <strong>manifest.json</strong><br />
+                  ├── <strong>background.js</strong><br />
+                  ├── <strong>index.html</strong><br />
+                  └── <strong>icons/</strong>
+                </div>
+                <div className="mt-1 font-sans opacity-90">Then click <strong>&ldquo;Select Folder&rdquo;</strong>!</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
